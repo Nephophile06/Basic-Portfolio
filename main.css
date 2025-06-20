@@ -6,57 +6,163 @@
 
 body {
   background: #fff;
-  color: #fff;
+  color: #111;
   font-family: 'Segoe UI', sans-serif;
 }
 
-.container {
-  padding: 2rem;
+/* 🔲 Navbar Block */
+.navbar-container {
+  width: 100%;
+  background: #f7f7f7;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  margin-bottom: 2rem;
+  padding-top: 1.5rem; /* ✨ top padding added */
 }
 
+/* ✅ Inner width matches container */
+.navbar-container .inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1.5rem 3rem;
+}
+
+/* 🧾 Site title */
+.site-title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-transform: lowercase;
+  color: #333;
+}
+
+/* 🧭 Navbar Flex layout */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 🔗 Menu */
 nav ul {
   display: flex;
-  justify-content: flex-end;
   list-style: none;
-  margin-bottom: 2rem;
-}
-
-nav ul li {
-  margin-left: 20px;
+  gap: 2rem;
 }
 
 nav ul li a {
-  color: white;
+  color: #111;
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: #60d0df;
+}
+
+/* 📦 Main Container */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem 3rem;
+}
+
+/* Grid Container */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem 3rem;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "name     image"
+    "bio      image"
+    "email    experience"
+    ".        experience";
   gap: 1.5rem;
 }
 
+/* Grid Area Assignments */
+.name-card {
+  grid-area: name;
+}
+.image-card {
+  grid-area: image;
+}
+.bio-card {
+  grid-area: bio;
+}
+.email-card {
+  grid-area: email;
+}
+.experience-card {
+  grid-area: experience;
+}
+
+/* Card Styles */
 .name-card,
 .image-card,
 .bio-card,
 .email-card,
 .experience-card {
-  background: #111;
+  background: #f7f7f7;
   padding: 1.5rem;
   border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.name-card h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
 }
 
 .image-card img {
   width: 100%;
+  height: 220px;
+  object-fit: cover;
   border-radius: 0.8rem;
 }
 
+.bio-card p,
+.email-card p,
+.experience-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
 .email-card a {
-  color: #fff;
+  margin-top: 1rem;
+  display: inline-block;
+  font-weight: bold;
+  color: #3c7a89;
   text-decoration: underline;
 }
 
+.experience-card h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
 .job {
-  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+.job h3 {
+  margin-bottom: 0.2rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-areas:
+      "name"
+      "image"
+      "bio"
+      "email"
+      "experience";
+    grid-template-columns: 1fr;
+  }
 }
