@@ -1,3 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: 'Times New Roman', Times, serif;
+  background: #fff;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.container {
+  padding: 2rem;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.name-card,
+.image-card,
+.bio-card,
+.email-card,
+.experience-card {
+  background: #111;
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
+
+.image-card img {
+  width: 100%;
+  border-radius: 0.8rem;
+}
+
+.email-card a {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.job {
+  margin-top: 1rem;
 }
