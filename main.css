@@ -13,6 +13,11 @@ h1, h2, h3{
   font-family: "Poppins", sans-serif;
 }
 
+h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
 body {
   background: linear-gradient(to right, #d0eefe, #f3fbff);
   color: #111;
@@ -54,12 +59,15 @@ nav ul li a {
   color: #111;
   text-decoration: none;
   font-weight: 600;
+  font-size: large;
   letter-spacing: 0.5px;
   transition: 0.3s;
 }
 
 nav ul li a:hover {
-  color: #60d0df;
+  background: linear-gradient(135deg, #3c7a89, #60d0df);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* 📦 Main Container */
@@ -70,100 +78,113 @@ nav ul li a:hover {
 }
 
 /* Grid Container */
+/* ... (আপনার বিদ্যমান CSS কোড) ... */
+
+/* 📦 Main Container */
 .container {
-  max-width: 1300px;
-  margin: auto;
-  padding: 1.5rem 3rem; /* 🔽 reduced padding */
+    max-width: 1300px; 
+    margin: auto;
+    padding: 1.5rem 3rem;
 }
 
+/* Grid Container */
 .grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-areas:
-    "name      image      experience"
-    "bio       email      experience";
-  gap: 1.2rem; /* 🔽 slightly reduced spacing */
-  margin-top: 1.5rem; /* 🔽 less gap after navbar */
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.5rem; 
+
+    /* গ্রিড এরিয়া সেটআপ করুন আপনার স্কেচ অনুযায়ী */
+    grid-template-areas:
+        "name      name      img       experience experience" /* প্রথম রো */
+        "about     about     img       experience experience" /* দ্বিতীয় রো */
+        "toolbox   toolbox   toolbox   .          ."          /* তৃতীয় রো - Toolbox 3 কলাম জুড়ে, বাকি 2 কলাম খালি */
+    ;
+
+    grid-template-rows: 100px 200px auto; /* 3টি রোর জন্য auto উচ্চতা */
 }
 
-/* Grid Area Assignments */
+/* প্রতিটি কার্ডকে তার নির্দিষ্ট grid-area তে অ্যাসাইন করুন */
 .name-card {
-  grid-area: name;
+    grid-area: name;
+    min-height: 100px; /* উদাহরণ: নাম কার্ডের জন্য ন্যূনতম উচ্চতা */
 }
+
 .image-card {
-  grid-area: image;
-}
-.bio-card {
-  grid-area: bio;
-}
-.email-card {
-  grid-area: email;
-}
-.experience-card {
-  grid-area: experience;
-}
-
-/* Card Styles */
-.name-card,
-.image-card,
-.bio-card,
-.email-card,
-.experience-card {
-  background: #f7f7f7;
-  padding: 1.5rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-}
-
-.name-card h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
+    grid-area: img;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .image-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 0.8rem;
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+    border-radius: 0.8rem;
 }
 
-.bio-card p,
-.email-card p,
-.experience-card p {
-  font-size: 1rem;
-  line-height: 1.6;
+.bio-card { 
+    grid-area: about;
+    font-weight: 500;
 }
 
-.email-card a {
-  margin-top: 1rem;
-  display: inline-block;
-  font-weight: bold;
-  color: #3c7a89;
-  text-decoration: underline;
+.email-card { /* আপনার স্কেচে এটি 'toolbox' এর জায়গায় হবে, অথবা একটি নতুন 'toolbox' কার্ড যোগ করতে হবে */
+    /* বর্তমানে আপনার HTML এ 'email-card' আছে। এটিকে 'toolbox' এর জায়গায় ব্যবহার করতে পারি,
+       অথবা আপনার HTML এ নতুন 'toolbox-card' div যোগ করতে হবে।
+       ধরে নিচ্ছি email-card কে toolbox হিসেবে ব্যবহার করবেন। */
+    grid-area: toolbox; /* Toolbox এর জন্য grid-area */
+    min-height: 150px; /* উদাহরণ: টুলবক্স কার্ডের জন্য ন্যূনতম উচ্চতা */
+    /* যদি টুলবক্সের মধ্যে আইকন থাকে, তাহলে flexbox ব্যবহার করে সাজাতে পারেন */
+    display: flex;
+    flex-direction: column; /* যদি কন্টেন্ট উল্লম্ব হয় */
+    align-items: flex-start; /* বাম দিকে অ্যালাইন করুন */
+    justify-content: flex-start;
+    padding: 1.5rem;
 }
 
-.experience-card h2 {
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
+
+.experience-card {
+    grid-area: experience;
+    min-height: 400px; /* উদাহরণ: অভিজ্ঞতা কার্ডের জন্য ন্যূনতম উচ্চতা, যা দুই রো জুড়ে থাকতে পারে */
 }
 
-.job {
-  margin-bottom: 1.5rem;
-}
-.job h3 {
-  margin-bottom: 0.2rem;
+
+/* অন্যান্য কার্ডের সাধারণ স্টাইল, এগুলো সব ঠিক আছে */
+.name-card,
+.bio-card,
+.email-card, /* toolbox এর জন্য এই ক্লাস ব্যবহার করলে, এর স্টাইল এখানে থাকবে */
+.experience-card {
+    background: #f7f7f7;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 /* Responsive */
 @media (max-width: 900px) {
-  .grid {
-    grid-template-areas:
-      "name"
-      "image"
-      "bio"
-      "email"
-      "experience";
-    grid-template-columns: 1fr;
-  }
-}
+    .grid {
+        /* ছোট স্ক্রিনের জন্য সিঙ্গেল কলাম লেআউট, আপনার স্কেচের মতো নয় */
+        grid-template-areas:
+            "name"
+            "image"
+            "bio"
+            "email" /* toolbox */
+            "experience";
+        grid-template-columns: 1fr;
+        grid-template-rows: auto; /* রোর উচ্চতা অটো করে দিন */
+    }
 
+    /* ছোট স্ক্রিনে কার্ডের উচ্চতা রিসেট করুন বা নতুন করে দিন */
+    .name-card,
+    .image-card,
+    .bio-card,
+    .email-card,
+    .experience-card {
+        height: auto;
+        min-height: auto; /* ছোট স্ক্রিনে min-height কমিয়ে দিন বা auto রাখুন */
+    }
+
+    .image-card img {
+        height: 180px; /* ছোট স্ক্রিনের জন্য ইমেজের উচ্চতা */
+    }
+}
