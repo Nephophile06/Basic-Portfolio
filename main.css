@@ -19,29 +19,22 @@ body {
   font-family: 'Segoe UI', sans-serif;
 }
 
-/* 🔲 Navbar Block */
+/* 🔲 Navbar Block (only spacing, no background here) */
 .navbar-container {
   width: 100%;
-  background: #f7f7f7;
-  border-bottom: 1px solid #eee;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+  background: #fff;
   margin-bottom: 2rem;
-  padding-top: 1.5rem; /* ✨ top padding added */
+  padding-top: 1.5rem;
 }
 
-/* ✅ Inner width matches container */
+/* ✅ Inner boxed container with grey background */
 .navbar-container .inner {
   max-width: 1200px;
   margin: auto;
   padding: 1.5rem 3rem;
-}
-
-/* 🧾 Site title */
-.site-title {
-  font-size: 1.4rem;
-  font-weight: bold;
-  text-transform: lowercase;
-  color: #333;
+  background: #f7f7f7;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
 }
 
 /* 🧭 Navbar Flex layout */
@@ -72,27 +65,26 @@ nav ul li a:hover {
 
 /* 📦 Main Container */
 .container {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: auto;
   padding: 2rem 3rem;
 }
 
 /* Grid Container */
 .container {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: auto;
-  padding: 2rem 3rem;
+  padding: 1.5rem 3rem; /* 🔽 reduced padding */
 }
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   grid-template-areas:
-    "name     image"
-    "bio      image"
-    "email    experience"
-    ".        experience";
-  gap: 1.5rem;
+    "name      image      experience"
+    "bio       email      experience";
+  gap: 1.2rem; /* 🔽 slightly reduced spacing */
+  margin-top: 1.5rem; /* 🔽 less gap after navbar */
 }
 
 /* Grid Area Assignments */
@@ -175,3 +167,4 @@ nav ul li a:hover {
     grid-template-columns: 1fr;
   }
 }
+
