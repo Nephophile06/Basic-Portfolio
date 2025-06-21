@@ -72,16 +72,6 @@ nav ul li a:hover {
 
 /* 📦 Main Container */
 .container {
-  max-width: 1300px;
-  margin: auto;
-  padding: 2rem 3rem;
-}
-
-/* Grid Container */
-/* ... (আপনার বিদ্যমান CSS কোড) ... */
-
-/* 📦 Main Container */
-.container {
     max-width: 1300px; 
     margin: auto;
     padding: 1.5rem 3rem;
@@ -95,18 +85,17 @@ nav ul li a:hover {
 
     /* গ্রিড এরিয়া সেটআপ করুন আপনার স্কেচ অনুযায়ী */
     grid-template-areas:
-        "name      name      img       experience experience" /* প্রথম রো */
-        "about     about     img       experience experience" /* দ্বিতীয় রো */
-        "toolbox   toolbox   toolbox   .          ."          /* তৃতীয় রো - Toolbox 3 কলাম জুড়ে, বাকি 2 কলাম খালি */
+        "name      name      img       experience experience" 
+        "about     about     img       experience experience" 
+        "toolbox   toolbox   toolbox   experience experience"
     ;
 
-    grid-template-rows: 100px 200px auto; /* 3টি রোর জন্য auto উচ্চতা */
+    grid-template-rows: 100px 200px 220px; /* 3টি রোর জন্য auto উচ্চতা */
 }
 
-/* প্রতিটি কার্ডকে তার নির্দিষ্ট grid-area তে অ্যাসাইন করুন */
 .name-card {
     grid-area: name;
-    min-height: 100px; /* উদাহরণ: নাম কার্ডের জন্য ন্যূনতম উচ্চতা */
+    min-height: 100px; 
 }
 
 .image-card {
@@ -128,31 +117,34 @@ nav ul li a:hover {
     font-weight: 500;
 }
 
-.email-card { /* আপনার স্কেচে এটি 'toolbox' এর জায়গায় হবে, অথবা একটি নতুন 'toolbox' কার্ড যোগ করতে হবে */
-    /* বর্তমানে আপনার HTML এ 'email-card' আছে। এটিকে 'toolbox' এর জায়গায় ব্যবহার করতে পারি,
-       অথবা আপনার HTML এ নতুন 'toolbox-card' div যোগ করতে হবে।
-       ধরে নিচ্ছি email-card কে toolbox হিসেবে ব্যবহার করবেন। */
-    grid-area: toolbox; /* Toolbox এর জন্য grid-area */
-    min-height: 150px; /* উদাহরণ: টুলবক্স কার্ডের জন্য ন্যূনতম উচ্চতা */
-    /* যদি টুলবক্সের মধ্যে আইকন থাকে, তাহলে flexbox ব্যবহার করে সাজাতে পারেন */
+.toolbox-card { 
+    grid-area: toolbox;
+    min-height: 150px;
     display: flex;
-    flex-direction: column; /* যদি কন্টেন্ট উল্লম্ব হয় */
-    align-items: flex-start; /* বাম দিকে অ্যালাইন করুন */
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: flex-start;
     padding: 1.5rem;
 }
 
+.toolbox-card .tool-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.toolbox-card .tool-icons img {
+    width: 40px; /* আইকনের আকার */
+    height: 40px;
+}
 
 .experience-card {
     grid-area: experience;
-    min-height: 400px; /* উদাহরণ: অভিজ্ঞতা কার্ডের জন্য ন্যূনতম উচ্চতা, যা দুই রো জুড়ে থাকতে পারে */
 }
 
-
-/* অন্যান্য কার্ডের সাধারণ স্টাইল, এগুলো সব ঠিক আছে */
 .name-card,
 .bio-card,
-.email-card, /* toolbox এর জন্য এই ক্লাস ব্যবহার করলে, এর স্টাইল এখানে থাকবে */
+.toolbox-card,
 .experience-card {
     background: #f7f7f7;
     padding: 1.5rem;
@@ -168,20 +160,19 @@ nav ul li a:hover {
             "name"
             "image"
             "bio"
-            "email" /* toolbox */
+            "toolbox" 
             "experience";
         grid-template-columns: 1fr;
-        grid-template-rows: auto; /* রোর উচ্চতা অটো করে দিন */
+        grid-template-rows: auto; 
     }
 
-    /* ছোট স্ক্রিনে কার্ডের উচ্চতা রিসেট করুন বা নতুন করে দিন */
     .name-card,
     .image-card,
     .bio-card,
-    .email-card,
+    .toolbox-card,
     .experience-card {
         height: auto;
-        min-height: auto; /* ছোট স্ক্রিনে min-height কমিয়ে দিন বা auto রাখুন */
+        min-height: auto; 
     }
 
     .image-card img {
