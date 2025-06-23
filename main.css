@@ -9,11 +9,8 @@
   box-sizing: border-box;
 }
 
-h1, h2, h3{
-  font-family: "Poppins", sans-serif;
-}
-
 h1 {
+  font-family: "Poppins", sans-serif;
   font-size: 1.75rem;
   font-weight: 600;
 }
@@ -90,7 +87,7 @@ nav ul li a:hover {
         "toolbox   toolbox   toolbox   experience experience"
     ;
 
-    grid-template-rows: 100px 200px 220px; /* 3টি রোর জন্য auto উচ্চতা */
+    grid-template-rows: 100px 200px 170px; /* 3টি রোর জন্য auto উচ্চতা */
 }
 
 .name-card {
@@ -150,6 +147,40 @@ nav ul li a:hover {
     padding: 1.5rem;
     border-radius: 1rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.job {
+  margin-bottom: 1.5rem;
+}
+
+.job-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #111;
+}
+
+.job-meta {
+  font-size: 1rem;
+  color: #111;
+  line-height: 1.6;
+}
+
+.job-meta strong {
+  font-weight: 600;
+  color: #111;
+}
+
+.job-details {
+  margin-top: 0.5rem;
+  padding-left: 1.2rem;
+  font-size: 1rem;
+  color: #111;
+  line-height: 1.6;
+}
+
+.job-details li {
+  margin-bottom: 0.4rem;
 }
 
 /* Responsive */
