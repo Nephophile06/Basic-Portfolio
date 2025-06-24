@@ -82,10 +82,10 @@ nav ul li a:hover {
 
     /* গ্রিড এরিয়া সেটআপ করুন আপনার স্কেচ অনুযায়ী */
     grid-template-areas:
-        "name      name      img       experience experience" 
-        "about     about     img       experience experience" 
-        "toolbox   toolbox   toolbox   experience experience"
-        "toolbox   toolbox   toolbox   .          ."
+        "name      name      img       experience     experience" 
+        "about     about     img       experience     experience" 
+        "toolbox   toolbox   toolbox   experience     experience"
+        "toolbox   toolbox   toolbox   availability   availability"
     ;
 
     grid-template-rows: 100px 200px 150px 120px; 
@@ -93,7 +93,10 @@ nav ul li a:hover {
 
 .name-card {
     grid-area: name;
-    min-height: 100px; 
+}
+
+.availability-status {
+    grid-area: availability;
 }
 
 .image-card {
@@ -141,9 +144,27 @@ nav ul li a:hover {
     grid-area: experience;
 }
 
+/* Availability Status Styles */
+.availability-status {
+    display: flex;
+    align-items: center; 
+    gap: 15px; 
+    color: #111; 
+    font-weight: 600;
+}
+
+.status-indicator {
+    width: 15px; 
+    height: 15px; 
+    background-color: #22c55e; 
+    border-radius: 50%; 
+    display: inline-block; 
+}
+
 .name-card,
 .bio-card,
 .toolbox-card,
+.availability-status,
 .experience-card {
     background: #f7f7f7;
     padding: 1.5rem;
@@ -203,6 +224,7 @@ nav ul li a:hover {
     .image-card,
     .bio-card,
     .toolbox-card,
+    .availability-status
     .experience-card {
         height: auto;
         min-height: auto; 
