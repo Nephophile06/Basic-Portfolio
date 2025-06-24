@@ -84,8 +84,8 @@ nav ul li a:hover {
   grid-template-areas:
     "name      name      img       experience   experience"
     "about     about     img       experience   experience"
-    "toolbox   toolbox   toolbox   experience   experience"
-    "toolbox   toolbox   toolbox   motivation   motivation"
+    "toolbox   toolbox   .         experience   experience"
+    ".         .         .         motivation   motivation"
     ".         .         .         motivation   motivation"
   ;
 
@@ -126,14 +126,14 @@ nav ul li a:hover {
   align-items: flex-start;
   justify-content: flex-start;
   padding: 1.5rem;
-  font-size: large;
+  font-size: larger;
   font-weight: 500;
 }
 
 .toolbox-card .tool-icons {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 1.75rem;
   justify-content: flex-start;
 }
 
