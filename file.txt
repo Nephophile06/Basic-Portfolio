@@ -1,28 +1,7 @@
-        <img src="icon/figma.svg">
-          <p>figma</p>
-          <img src="icon/canva.svg">
-          <p>canva</p>
-          <img src="icon/css.svg">
-          <p>css</p>
-          <img src="icon/tailwindcss.svg">
-          <p>tailwindcss</p>
-          <img src="icon/bootstrap.svg">
-          <p>bootstrap</p>
-          <img src="icon/html5.svg">
-          <p>html5</p>
+        
           
-          <img src="icon/javascript.svg">
-          <p>javascript</p>
           <img src="icon/git.svg">
           <p>git</p>
-          <img src="icon/flask.svg">
-          <p>flask</p>
-          <img src="icon/mongodb.svg">
-          <p>mongodb</p>
-          <img src="icon/json.svg">
-          <p>json</p>
-          <img src="icon/jsonwebtokens.svg">
-          <p>json web tokens</p>
           <img src="icon/github.svg">
           <p>github</p>
           <img src="icon/render.svg">

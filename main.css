@@ -82,14 +82,14 @@ nav ul li a:hover {
 
   /* গ্রিড এরিয়া সেটআপ করুন আপনার স্কেচ অনুযায়ী */
   grid-template-areas:
-    "name        name        img       experience   experience"
-    "about       about       img       experience   experience"
-    "toolbox01   toolbox01   .         experience   experience"
-    ".           .           .         motivation   motivation"
-    ".           .           .         motivation   motivation"
+    "name        name        img        experience   experience"
+    "about       about       img        experience   experience"
+    "toolbox01   toolbox01   toolbox01  experience   experience"
+    "toolbox01   toolbox01   toolbox01  motivation   motivation"
+    "toolbox02   toolbox02   toolbox03  motivation   motivation"
   ;
 
-  grid-template-rows: 100px 200px 150px 140px 75px;
+  grid-template-rows: 100px 200px 150px 40px;
 }
 
 .name-card {
@@ -121,6 +121,19 @@ nav ul li a:hover {
 
 .toolbox-card01 {
   grid-area: toolbox01;
+}
+
+.toolbox-card02 {
+  grid-area: toolbox02;
+}
+
+.toolbox-card03 {
+  grid-area: toolbox03;
+}
+
+.toolbox-card01,
+.toolbox-card02,
+.toolbox-card03 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -130,14 +143,18 @@ nav ul li a:hover {
   font-weight: 500;
 }
 
-.toolbox-card01 .tool-icons01 {
+.toolbox-card01 .tool-icons01,
+.toolbox-card02 .tool-icons02,
+.toolbox-card03 .tool-icons03 {
   display: flex;
   flex-wrap: wrap;
   gap: 1.75rem;
   justify-content: flex-start;
 }
 
-.toolbox-card01 .tool-icons01 img {
+.toolbox-card01 .tool-icons01 img,
+.toolbox-card02 .tool-icons02 img,
+.toolbox-card03 .tool-icons03 img {
   width: 30px;
   height: 30px;
   object-fit: contain;
@@ -150,6 +167,8 @@ nav ul li a:hover {
 .name-card,
 .bio-card,
 .toolbox-card01,
+.toolbox-card02,
+.toolbox-card03,
 .motivation-card,
 .experience-card {
   background: #f7f7f7;
