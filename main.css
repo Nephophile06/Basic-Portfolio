@@ -85,9 +85,10 @@ nav ul li a:hover {
         "name      name      img       experience experience" 
         "about     about     img       experience experience" 
         "toolbox   toolbox   toolbox   experience experience"
+        "toolbox   toolbox   toolbox   .          ."
     ;
 
-    grid-template-rows: 100px 200px 170px; /* 3টি রোর জন্য auto উচ্চতা */
+    grid-template-rows: 100px 200px 150px 120px; 
 }
 
 .name-card {
@@ -116,7 +117,6 @@ nav ul li a:hover {
 
 .toolbox-card { 
     grid-area: toolbox;
-    min-height: 150px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -125,14 +125,16 @@ nav ul li a:hover {
 }
 
 .toolbox-card .tool-icons {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1rem;
+    display: flex; 
+    flex-wrap: wrap;
+    gap: 1.75rem; 
+    justify-content: flex-start; 
 }
 
 .toolbox-card .tool-icons img {
-    width: 40px; /* আইকনের আকার */
-    height: 40px;
+    width: 40px;   
+    height: 40px;  
+    object-fit: contain; 
 }
 
 .experience-card {
