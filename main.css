@@ -87,7 +87,7 @@ nav ul li a:hover {
     "toolbox01   toolbox01   toolbox01  experience   experience"
     "toolbox01   toolbox01   toolbox01  toolbox04    toolbox04"
     "toolbox02   toolbox02   toolbox03  toolbox04    toolbox04"
-    ".           .           toolbox03  toolbox04    toolbox04"
+    "work        work        toolbox03  toolbox04    toolbox04"
   ;
 
   grid-template-rows: 100px 200px 150px 40px 150px auto;
@@ -114,6 +114,10 @@ nav ul li a:hover {
 .bio-card {
   grid-area: about;
   font-weight: 500;
+}
+
+.experience-card {
+  grid-area: experience;
 }
 
 .toolbox-card01 {
@@ -164,17 +168,18 @@ nav ul li a:hover {
   object-fit: contain;
 }
 
-.experience-card {
-  grid-area: experience;
+.work-card {
+  grid-area: work;
 }
 
 .name-card,
 .bio-card,
+.experience-card,
 .toolbox-card01,
 .toolbox-card02,
 .toolbox-card03,
 .toolbox-card04,
-.experience-card {
+.work-card {
   background: #f7f7f7;
   padding: 1.5rem;
   border-radius: 1rem;
