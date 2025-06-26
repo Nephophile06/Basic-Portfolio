@@ -21,7 +21,7 @@ body {
   font-family: 'Segoe UI', sans-serif;
 }
 
-/* 🔲 Navbar Block (only spacing, no background here) */
+/* 🔲 Navbar Block */
 .navbar-container {
   width: 100%;
   background: linear-gradient(to right, #d0eefe, #f3fbff);
@@ -80,7 +80,7 @@ nav ul li a:hover {
   grid-template-columns: repeat(5, 1fr);
   gap: 1.5rem;
 
-  /* গ্রিড এরিয়া সেটআপ করুন আপনার স্কেচ অনুযায়ী */
+  /* grid area setup */
   grid-template-areas:
     "name        name        img        experience   experience"
     "about       about       img        experience   experience"
@@ -220,31 +220,3 @@ nav ul li a:hover {
   margin-bottom: 0.4rem;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .grid {
-    /* ছোট স্ক্রিনের জন্য সিঙ্গেল কলাম লেআউট, আপনার স্কেচের মতো নয় */
-    grid-template-areas:
-      "name"
-      "image"
-      "bio"
-      "toolbox"
-      "experience";
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-  }
-
-  .name-card,
-  .image-card,
-  .bio-card,
-  .toolbox-card,
-  .availability-status .experience-card {
-    height: auto;
-    min-height: auto;
-  }
-
-  .image-card img {
-    height: 180px;
-    /* ছোট স্ক্রিনের জন্য ইমেজের উচ্চতা */
-  }
-}
