@@ -85,19 +85,16 @@ nav ul li a:hover {
     "name        name        img        experience   experience"
     "about       about       img        experience   experience"
     "toolbox01   toolbox01   toolbox01  experience   experience"
-    "toolbox01   toolbox01   toolbox01  motivation   motivation"
-    "toolbox02   toolbox02   toolbox03  motivation   motivation"
+    "toolbox01   toolbox01   toolbox01  toolbox04    toolbox04"
+    "toolbox02   toolbox02   toolbox03  toolbox04    toolbox04"
+    ".           .           toolbox03  toolbox04    toolbox04"
   ;
 
-  grid-template-rows: 100px 200px 150px 40px;
+  grid-template-rows: 100px 200px 150px 40px 150px auto;
 }
 
 .name-card {
   grid-area: name;
-}
-
-.motivation-card {
-  grid-area: motivation;
 }
 
 .image-card {
@@ -131,9 +128,14 @@ nav ul li a:hover {
   grid-area: toolbox03;
 }
 
+.toolbox-card04 {
+  grid-area: toolbox04;
+}
+
 .toolbox-card01,
 .toolbox-card02,
-.toolbox-card03 {
+.toolbox-card03,
+.toolbox-card04 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -145,7 +147,8 @@ nav ul li a:hover {
 
 .toolbox-card01 .tool-icons01,
 .toolbox-card02 .tool-icons02,
-.toolbox-card03 .tool-icons03 {
+.toolbox-card03 .tool-icons03,
+.toolbox-card04 .tool-icons04 {
   display: flex;
   flex-wrap: wrap;
   gap: 1.75rem;
@@ -154,7 +157,8 @@ nav ul li a:hover {
 
 .toolbox-card01 .tool-icons01 img,
 .toolbox-card02 .tool-icons02 img,
-.toolbox-card03 .tool-icons03 img {
+.toolbox-card03 .tool-icons03 img,
+.toolbox-card04 .tool-icons04 img {
   width: 30px;
   height: 30px;
   object-fit: contain;
@@ -169,7 +173,7 @@ nav ul li a:hover {
 .toolbox-card01,
 .toolbox-card02,
 .toolbox-card03,
-.motivation-card,
+.toolbox-card04,
 .experience-card {
   background: #f7f7f7;
   padding: 1.5rem;
